@@ -3,7 +3,8 @@
  * exodus from jQuery!!
  * with little help from my functions
  * author Heeju Jeong(hjjeong@rsupport.com)
- * v 1.0.1 (Mar 20 2015)
+ * some functions referred by http://youmightnotneedjquery.com/
+ * v 1.0.2 (Mar 20 2015)
  */
 
 'use strict';
@@ -95,9 +96,24 @@ function domSelect(selector, context) {
     context = document;
   }
 
-  var el = context[method](matches[2]);
+  var el;
+  try {
+    el = context[method](matches[2]);
+  }
+  catch (e) {
+    el = null
+  }
 
-  return (el && el.length && el.length > 1) ? el[0] : el;
+  if (el && el.length !== undefined) {
+    if (el.length === 0) {
+      el = null;
+    }
+    else if (el.length === 1) {
+      el = el[0];
+    }
+  }
+
+  return el;
 }
 
 
