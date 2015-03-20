@@ -3,7 +3,7 @@
  * exodus from jQuery!!
  * with little help from my functions
  * author Heeju Jeong(hjjeong@rsupport.com)
- * v 1.0.0 (Mar 20 2015)
+ * v 1.0.1 (Mar 20 2015)
  */
 
 'use strict';
